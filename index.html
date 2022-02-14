@@ -7,16 +7,27 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css" />
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
 
   <body>
 
     <!-- <select name="movieList" id="movieList" placeholder="Choose an episode"></select> -->
 
-    <form action="" id="searchForm">
-      <input type="text" name="topic" id="topic" />
-      <input type="button" value="search" id="button" />
+    <form id="searchForm">
+
+      <input 
+      type="text" 
+      name="topic" 
+      id="topic" 
+      class="topic2"
+      placeholder="TV-Show"/>
+
+      <button class="search">Let's Go</button>
     </form>
+    <div id="container"></div>
 
     <script src="./script.js"></script>
 
