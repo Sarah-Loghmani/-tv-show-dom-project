@@ -71,5 +71,7 @@ const getShow = async function () {
     });
   };
   selectOptions();
+
+  // --------------match the episodes to the list-----------
 };
 getShow();
