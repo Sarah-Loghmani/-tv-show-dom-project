@@ -1,41 +1,62 @@
+const search = document.querySelector("#search"); //input
+// console.log(search);
 
-const searchForm = document.querySelector("#searchForm");
+const getShow = async function () {
 
-searchForm.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  
-  const container = document.querySelector("#container");
-//   console.log(container.children);
-  if(container.children){
-      const imgs = container.children
-      for(let img of imgs){
-         img.remove()
-      }
-  }
+  const container = document.createElement("div");//div
 
-  const topic = searchForm.elements.topic.value;
-  const config = { params: { q: topic } };
+  // API API API API API API API API API API API API
+  const response = await axios("https://api.tvmaze.com/shows/82/episodes");
+  const episodes = response.data;
+  console.log(episodes);
+  // API API API API API API API API API API API API 
 
-  const response = await axios.get(
-    "https://api.tvmaze.com/search/shows",
-    config);
+  const getImgs = ()=>{
 
-  getImage(response.data, container);
+      episodes.forEach((ep) => {
+        const img = document.createElement("img");
+        img.src = ep.image.medium;
+        container.appendChild(img);
+        document.body.appendChild(container);
+      });
+  };
+  getImgs()
 
-  searchForm.elements.topic.value = "";
-//   console.log(container);
-});
-
-const getImage = (serials, div) => {
+  search.addEventListener("input", function (e) {
+    console.log(e.target.value);
     
-    serials.forEach((ser) => {
-
-        if(ser.show.image){
-            const img = document.createElement("img");
-            img.src = ser.show.image.medium
-            div.append(img)
-        }else{
-            div.textContent = "There is not any result"
-        }
+    episodes.filter(ep=>{
+        ep.name.includes(e.target.value) || 
+        ep.summary.includes(e.target.value);
+        const img = document.createElement("img");
+        img.src = ep.image.medium;
+        container.appendChild(img);
+        document.body.appendChild(container);
+        
     });
+
+    //   if (container.children.length !== 0) {
+    //     for (let i = 0; i < container.children.length; i++) {
+    //       container.children[i].remove();
+    //     }
+    //   }
+    //   console.log(container.children);
+    
+  });
 };
+getShow();
+
+//   console.log(container);
+
+// const getImage = (episodes, div) => {
+//     console.log(episodes);
+
+//     episodes.forEach((ep) => {
+
+//         if(ep.image){
+//             const img = document.createElement("img");
+//             img.src = ep.image.medium
+//             div.append(img)
+//         };
+//     });
+// };
