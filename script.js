@@ -20,8 +20,8 @@ const getShow = async function () {
 
     img.src = ep.image.medium;
     figcaption.innerText = ep.name;
-    p.textContent = ep.summary.replaceAll("<p>", "").replaceAll("</p>", "")
-    p.style.fontSize ="0.8rem";
+    p.textContent = ep.summary.replaceAll("<p>", "").replaceAll("</p>", "");
+    p.style.fontSize = "0.8rem";
 
     figure.append(img, figcaption);
     card.append(figure, p);
@@ -47,5 +47,29 @@ const getShow = async function () {
       }
     });
   });
+
+  // --------------------------episodeList-------------------
+  const episodeList = document.getElementById("episodeList");
+
+  const selectOptions = () => {
+    episodes.forEach((ep) => {
+      let episodeOption = "";
+
+      if (ep.season < 10 && ep.number < 10) {
+        episodeOption = `S0${ep.season}E0${ep.number}`;
+      } else if (ep.season >= 10 && ep.number >= 10) {
+        episodeOption = `S${ep.season}E${ep.number}`;
+      } else if (ep.season < 10 && ep.number >= 10) {
+        episodeOption = `S0${ep.season}E${ep.number}`;
+      } else if (ep.season >= 10 && ep.number < 10) {
+        episodeOption = `S${ep.season}E0${ep.number}`;
+      }
+
+      const option = document.createElement("option");
+      option.textContent = episodeOption;
+      episodeList.appendChild(option);
+    });
+  };
+  selectOptions();
 };
 getShow();
