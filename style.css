@@ -1,9 +1,25 @@
-/* .flex {
-    display: flex;
-    flex-flow: wrap ;
-    
-};
-.card{
-    background-color:antiquewhite;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
 
-}; */
+.flex {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: minmax(350px, 355px);
+  justify-content: center;
+  align-content: center;
+  grid-auto-flow: row;
+
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-flow: column wrap;
+  background-color: khaki;
+}
+.card {
+  background-color: antiquewhite;
+  /* display: flex; */
+  /* flex-flow: column wrap; */
+}
