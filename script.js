@@ -2,7 +2,6 @@
 // console.log(search);
 
 const getShow = async function () {
-  
   const search = document.querySelector("#search"); //input
   const container = document.createElement("div"); //div
 
@@ -20,12 +19,14 @@ const getShow = async function () {
     card.classList.add("card");
     const p = document.createElement("p");
     const p2 = document.createElement("p");
-    p2.classList.add("epNum");
+    const a = document.createElement("a");
 
     img.src = ep.image.medium;
     figcaption.innerText = ep.name;
     p.textContent = ep.summary.replaceAll("<p>", "").replaceAll("</p>", "");
     p.style.fontSize = "0.8rem";
+    a.href = ep.url;
+    a.target = "_blank";
 
     // ----adding the number of episodes under the imgs.-----
     if (ep.season < 10 && ep.number < 10) {
@@ -38,10 +39,11 @@ const getShow = async function () {
       p2.textContent = `S${ep.season}E0${ep.number}`;
     }
 
-    figure.append(img, figcaption, p2);
+    a.append(figcaption);
+    figure.append(img, a, p2);
     card.append(figure, p);
     container.appendChild(card);
-    container.classList.toggle("flex");
+    container.classList.add("flex");
     document.body.appendChild(container);
   });
 
@@ -72,13 +74,13 @@ const getShow = async function () {
       let episodeOption = "";
 
       if (ep.season < 10 && ep.number < 10) {
-        episodeOption = `S0${ep.season}E0${ep.number}`;
+        episodeOption = `S0${ep.season}E0${ep.number} `;
       } else if (ep.season >= 10 && ep.number >= 10) {
-        episodeOption = `S${ep.season}E${ep.number}`;
+        episodeOption = `S${ep.season}E${ep.number} `;
       } else if (ep.season < 10 && ep.number >= 10) {
-        episodeOption = `S0${ep.season}E${ep.number}`;
+        episodeOption = `S0${ep.season}E${ep.number} `;
       } else if (ep.season >= 10 && ep.number < 10) {
-        episodeOption = `S${ep.season}E0${ep.number}`;
+        episodeOption = `S${ep.season}E0${ep.number} `;
       }
 
       const option = document.createElement("option");
