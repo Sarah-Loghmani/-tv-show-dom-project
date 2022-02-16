@@ -1,8 +1,9 @@
 // alert("Turn on your vpn");
-const search = document.querySelector("#search"); //input
 // console.log(search);
 
 const getShow = async function () {
+  
+  const search = document.querySelector("#search"); //input
   const container = document.createElement("div"); //div
 
   // ------------API API API API API API API API API------------
