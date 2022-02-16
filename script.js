@@ -1,3 +1,4 @@
+// alert("Turn on your vpn");
 const search = document.querySelector("#search"); //input
 // console.log(search);
 
@@ -17,13 +18,26 @@ const getShow = async function () {
     const card = document.createElement("div");
     card.classList.add("card");
     const p = document.createElement("p");
+    const p2 = document.createElement("p");
+    p2.classList.add("epNum");
 
     img.src = ep.image.medium;
     figcaption.innerText = ep.name;
     p.textContent = ep.summary.replaceAll("<p>", "").replaceAll("</p>", "");
     p.style.fontSize = "0.8rem";
 
-    figure.append(img, figcaption);
+    // ----adding the number of episodes under the imgs.-----
+    if (ep.season < 10 && ep.number < 10) {
+      p2.textContent = `S0${ep.season}E0${ep.number}`;
+    } else if (ep.season >= 10 && ep.number >= 10) {
+      p2.textContent = `S${ep.season}E${ep.number}`;
+    } else if (ep.season < 10 && ep.number >= 10) {
+      p2.textContent = `S0${ep.season}E${ep.number}`;
+    } else if (ep.season >= 10 && ep.number < 10) {
+      p2.textContent = `S${ep.season}E0${ep.number}`;
+    }
+
+    figure.append(img, figcaption, p2);
     card.append(figure, p);
     container.appendChild(card);
     container.classList.toggle("flex");
@@ -31,10 +45,11 @@ const getShow = async function () {
   });
 
   //-----------------search input---------------------
+  const cards = document.querySelectorAll(".card");
+
   search.addEventListener("keyup", (e) => {
     console.log(e.target.value);
 
-    const cards = document.querySelectorAll(".card");
     console.log(cards);
 
     let searchInput = e.target.value.toLowerCase();
@@ -72,6 +87,22 @@ const getShow = async function () {
   };
   selectOptions();
 
-  // --------------match the episodes to the list-----------
+  // --------------match the episode after selecting-----------
+  episodeList.addEventListener("change", (e) => {
+    console.log(e.target.value);
+    cards.forEach((card) => {
+      const epNum = card.children[0].children[2].innerText;
+
+      if (e.target.value === "") {
+        cards.forEach((card) => {
+          card.style.display = "block";
+        });
+      } else if (epNum === e.target.value) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
 };
 getShow();
