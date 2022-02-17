@@ -6,6 +6,7 @@
 
 body {
   background-color: rgb(243, 241, 241);
+  /* position: relative; */
 }
 
 .flex {
@@ -36,10 +37,28 @@ a {
   text-decoration: none;
 }
 
-.input-container {
+.topImage {
   background: url(./img/Game-of-Thrones-Season-8.jpg);
-  height:600px;
+  height:100vh;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+}
+
+/* #search, #episodeList{
+} */
+
+.inputContainer{
+  background-color: rgb(132, 150, 179);
+  height: 30px;
+  position:sticky;
+  top:0px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+
+
+  
 }
