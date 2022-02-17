@@ -5,12 +5,12 @@
 }
 
 body {
-  background-color: rgb(238, 234, 234);
+  background-color: rgb(243, 241, 241);
 }
 
 .flex {
   
-  background-color: rgb(238, 234, 234); 
+  background-color: rgb(243, 241, 241); 
   margin: 2rem;
 
   display: flex;
@@ -26,9 +26,8 @@ body {
   min-height: 350px;
 
   text-align: center;
-  text-decoration-line: none;
   
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: wrap;
   justify-content: space-around;
 }
