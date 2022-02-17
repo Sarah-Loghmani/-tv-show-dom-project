@@ -102,6 +102,10 @@ const getShow = async function () {
         });
       } else if (epNum === e.target.value) {
         card.style.display = "block";
+        container.style.background =
+          "url(./img/b64264a7-0001-0004-0000-000000686693_w996_r1.778_fpx25.32_fpy55.01.jpg";
+          container.style.backgroundSize = 'cover'
+          container.style.marginTop = "-50px"
       } else {
         card.style.display = "none";
       }
