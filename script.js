@@ -1,4 +1,4 @@
-// alert("Turn on your vpn");
+alert("Turn on your vpn");
 // console.log(search);
 
 const getShow = async function () {
@@ -25,6 +25,9 @@ const getShow = async function () {
     figcaption.innerText = ep.name;
     p.textContent = ep.summary.replaceAll("<p>", "").replaceAll("</p>", "");
     p.style.fontSize = "0.8rem";
+    p.style.textAlign= 'justify';
+    p.style.margin= '1rem'
+    // p.style.marginTop = "0";
     a.href = ep.url;
     a.target = "_blank";
 
@@ -102,10 +105,6 @@ const getShow = async function () {
         });
       } else if (epNum === e.target.value) {
         card.style.display = "block";
-        container.style.background =
-          "url(./img/b64264a7-0001-0004-0000-000000686693_w996_r1.778_fpx25.32_fpy55.01.jpg";
-          container.style.backgroundSize = 'cover'
-          container.style.marginTop = "-50px"
       } else {
         card.style.display = "none";
       }
