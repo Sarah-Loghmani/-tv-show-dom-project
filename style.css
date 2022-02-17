@@ -4,22 +4,31 @@
   box-sizing: border-box;
 }
 
-.flex {
-  display: grid;
-  gap: 0.5em;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: minmax(350px, 355px);
-  justify-content: center;
-  align-content: center;
-  grid-auto-flow: row;
-
-  /* justify-content: center; */
-  /* align-items: center; */
-  flex-flow: column wrap;
-  background-color: khaki;
+body {
+  background-color: rgb(238, 234, 234);
 }
+
+.flex {
+  
+  background-color: rgb(238, 234, 234); 
+  margin: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
+  
+}
+
 .card {
-  background-color: antiquewhite;
-  /* display: flex; */
-  /* flex-flow: column wrap; */
+  background-color: white;
+  width: 300px;
+  min-height: 350px;
+
+  text-align: center;
+  text-decoration-line: none;
+  
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
 }
