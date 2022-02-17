@@ -37,6 +37,8 @@ a {
 }
 
 .input-container {
-  background: url(./img/474904-h.jfif);
-  height:400px
+  background: url(./img/Game-of-Thrones-Season-8.jpg);
+  height:600px;
+  background-size: cover;
+  background-attachment: fixed;
 }
