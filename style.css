@@ -90,3 +90,11 @@ footer p{
     margin-bottom: 3rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+@media screen and (max-width:870px){
+  .topImage{
+      background: url(./img/p8553063_b_v13_ax.jpg);
+      background-size: cover;
+  background-attachment: fixed;
+    
+  }
+}
