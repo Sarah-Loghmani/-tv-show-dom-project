@@ -6,27 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tv-show-dom-project</title>
 
-<!-- font-family: 'Pacifico', cursive; -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- font-family: 'Pacifico', cursive; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
 
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
+    <main>
+      <div class="topImage" id="up"></div>
+      <div class="inputContainer">
+        <input type="text" name="search" id="search" placeholder="TV-Show" />
 
-    <div class="topImage"></div>
-    <div class="inputContainer">
-      
-      <input type="text" name="search" id="search" placeholder="TV-Show" />
-  
-      <select name="episodeList" id="episodeList">
-        <option value="">Choose all episode</option>
-      </select>
-    </div>
+        <select name="episodeList" id="episodeList">
+          <option value="">Choose all episode</option>
+        </select>
+      </div>
+    </main>
+
+    <footer>
+      <div class="fixed"><a class="fixed-up" href="#up"> UP </a></div>
+      <p>@2021 FLEX-BOX</p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>
