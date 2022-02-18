@@ -20,14 +20,14 @@ const getShow = async function () {
     const p = document.createElement("p");
     const p2 = document.createElement("p");
     const a = document.createElement("a");
-    const main = document.querySelector('main')
+    const main = document.querySelector("main");
 
     img.src = ep.image.medium;
     figcaption.innerText = ep.name;
     p.textContent = ep.summary.replaceAll("<p>", "").replaceAll("</p>", "");
     p.style.fontSize = "0.8rem";
-    p.style.textAlign= 'justify';
-    p.style.margin= '1rem'
+    p.style.textAlign = "justify";
+    p.style.margin = "1rem";
     // p.style.marginTop = "0";
     a.href = ep.url;
     a.target = "_blank";
@@ -64,6 +64,7 @@ const getShow = async function () {
     cards.forEach((card) => {
       if (!card.textContent.toLowerCase().includes(searchInput)) {
         card.style.display = "none";
+
       } else {
         card.style.display = "block";
       }
