@@ -1,4 +1,4 @@
-alert("Turn on your vpn");
+// alert("Turn on your vpn");
 // console.log(search);
 
 const getShow = async function () {
@@ -20,6 +20,7 @@ const getShow = async function () {
     const p = document.createElement("p");
     const p2 = document.createElement("p");
     const a = document.createElement("a");
+    const main = document.querySelector('main')
 
     img.src = ep.image.medium;
     figcaption.innerText = ep.name;
@@ -47,7 +48,7 @@ const getShow = async function () {
     card.append(figure, p);
     container.appendChild(card);
     container.classList.add("flex");
-    document.body.appendChild(container);
+    main.append(container);
   });
 
   //-----------------search input---------------------
