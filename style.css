@@ -5,30 +5,29 @@
 }
 
 body {
-  background-color: #DCEFFD;
-  
+  background-color: #dceffd;
+
   /* position: relative; */
 }
 
 .flex {
-   background: url(./img/b64264a7-0001-0004-0000-000000686693_w996_r1.778_fpx25.32_fpy55.01.jpg);
-    background-size: cover;
-    margin-bottom:3rem;
+  background: url(./img/b64264a7-0001-0004-0000-000000686693_w996_r1.778_fpx25.32_fpy55.01.jpg);
+  background-size: cover;
+  margin-bottom: 3rem;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1em;
-  
 }
 
 .card {
   background-color: white;
   width: 250px;
   min-height: 370px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
-  
+
   /* display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -42,7 +41,7 @@ a {
 
 .topImage {
   background: url(./img/Game-of-Thrones-Season-8.jpg);
-  height:100vh;
+  height: 100vh;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -51,21 +50,37 @@ a {
 /* #search, #episodeList{
 } */
 
-.inputContainer{
+.inputContainer {
   background-color: rgb(58, 63, 70);
   height: 30px;
-  position:sticky;
-  top:0px;
+  position: sticky;
+  top: 0px;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
   margin-bottom: 100px;
-
-
-  
 }
-.singleEpisode{
-  margin-left :500px
+.singleEpisode {
+  margin-left: 500px;
+}
+
+.fixed {
+  background-color: brown;
+  min-height: 50px;
+  width: 50px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  padding: 10px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 1.3rem;
+}
+.fixed-up {
+  text-decoration: none;
+  color: cornsilk;
 }
