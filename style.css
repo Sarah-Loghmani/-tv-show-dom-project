@@ -14,6 +14,7 @@ body {
   background: url(./img/b64264a7-0001-0004-0000-000000686693_w996_r1.778_fpx25.32_fpy55.01.jpg);
   background-size: cover;
   margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
 
   display: flex;
   flex-wrap: wrap;
@@ -83,4 +84,9 @@ a {
 .fixed-up {
   text-decoration: none;
   color: cornsilk;
+}
+footer p{
+    text-align: center;
+    margin-bottom: 3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
