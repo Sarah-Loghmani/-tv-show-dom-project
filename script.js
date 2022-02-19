@@ -1,4 +1,4 @@
-// alert("Turn on your vpn");
+alert("Turn on your vpn");
 // console.log(search);
 
 const getShow = async function () {
